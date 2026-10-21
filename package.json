@@ -1,0 +1,25 @@
+{
+  "name": "partituras",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @partituras/web",
+    "build": "npm run build -w @partituras/web",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev:api": "npm run dev -w @partituras/api",
+    "db:check": "npm run db:check -w @partituras/api",
+    "dev:all": "node scripts/dev-all.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
